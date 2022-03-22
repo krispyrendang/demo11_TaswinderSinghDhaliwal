@@ -168,13 +168,16 @@ function populateCardsDynamically() {
                 // this line will call a function to save the hikes to the user's document             
                 testHikeCard.querySelector('i').onclick = () => saveBookmark(hikeID);
 
+                testHikeCard.querySelector('.read-more').href = "eachHike.html?hikeName="+hikeName +"&id=" + hikeID;
+
                 testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 hikeCardGroup.appendChild(testHikeCard);
             })
 
         })
 }
-// populateCardsDynamically();
+// populateCardsDynamically(); //not needed to be called here since 
+// it is now called in the auth user state function.
 
 //-----------------------------------------------------------------------------
 // This function is called whenever the user clicks on the "bookmark" icon.
